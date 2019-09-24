@@ -1,10 +1,23 @@
-import { TabNavigator } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+import React from "react"
+import {Image,StyleSheet} from 'react-native'
+
 import Home from './page/index/Home'
 import Live from './page/index/Live'
 import Mine from './page/index/Mine'
 import Video from './page/index/Video'
-
-export default MainTab = TabNavigator({
+const styles = StyleSheet.create({
+    navigator: {
+    //  backgroundColor : 'green'
+    },
+    navigatorTitle: {
+    //   color: 'red'
+    },
+    headerTintColor : {
+        // color : 'blue'
+    }
+  });
+exports.MainTab = createBottomTabNavigator({
     Home: {
         screen: Home,
         navigationOptions:({navigation, screeProps}) => ({
@@ -14,6 +27,7 @@ export default MainTab = TabNavigator({
             header:null,
             headerTitle: '首页',
             headerStyle: styles.navigator,
+            headerTintColor : styles.headerTintColor,
             headerTitleStyle: styles.navigatorTitle,
             gesturesEnabled:true,
 
@@ -23,9 +37,10 @@ export default MainTab = TabNavigator({
             tabBarIcon:(({tintColor,focused}) => {
                 return(
                     <Image 
-                        source={focused ? MainTabSelectedIcon : MainTabUnSelectedIcon}
-                        style={styles.tabbarImage} 
-                    />
+                    source={{uri : 'http://pic.51yuansu.com/pic3/cover/03/06/15/5b2cb0bceb281_610.jpg'}}
+                    style = {{width:20,height:20}}
+                    
+                />
                 )
             }),
         })
@@ -48,9 +63,10 @@ export default MainTab = TabNavigator({
             tabBarIcon:(({tintColor,focused}) => {
                 return(
                     <Image 
-                        source={focused ? LiveTabSelectedIcon : LiveTabUnSelectedIcon}
-                        style={styles.tabbarImage} 
-                    />
+                    source={{uri : 'https://img.shouji.com.cn/simg/20160530/8329722505.png'}}
+                    style = {{width:20,height:20}}
+                    
+                />
                 )
             }),
         })
@@ -73,9 +89,10 @@ export default MainTab = TabNavigator({
             tabBarIcon:(({tintColor,focused}) => {
                 return(
                     <Image 
-                        source={focused ? VideoTabSelectedIcon : VideoTabUnSelectedIcon}
-                        style={styles.tabbarImage} 
-                    />
+                    source={{uri : 'http://bpic.588ku.com//element_pic/19/03/20/cbb9cae58a1bf7c657e90642de7dd74e.jpg'}}
+                    style = {{width:20,height:20}}
+                    
+                />
                 )
             }),
         })
@@ -98,8 +115,9 @@ export default MainTab = TabNavigator({
             tabBarIcon:(({tintColor,focused}) => {
                 return(
                     <Image 
-                        source={focused ? MineTabSelectedIcon : MineTabUnSelectedIcon}
-                        style={styles.tabbarImage} 
+                        source={{uri : 'http://shejiye.com/uploadfile/icon/2017/0203/shejiyeiconusssd4wmenv.png'}}
+                        style = {{width:20,height:20}}
+                        
                     />
                 )
             }),

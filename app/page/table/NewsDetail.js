@@ -59,7 +59,7 @@ class d extends Component {
   renderList() {
     return (
       <View>
-        <Text style={{ textAlign: 'center', marginTop: 50 }}>hello World !56dsa 你</Text>
+        <Text style={{ textAlign: 'center', marginTop: 20 }}>新闻详情</Text>
         <TextInput style={{ height: 40, borderColor: 'red', borderWidth: 1 }}
           placeholder='此处输入框'
           onChangeText={(text) => {
@@ -83,7 +83,7 @@ class d extends Component {
             source={{ uri: 'http://language.chinadaily.com.cn/images/attachement/jpg/site1/20151010/00221910dbb41782b08f47.jpg' }} />
         </View>
 
-        <View style={{ display: 'flex', justifyContent: "center", alignItems: 'center', marginTop: 50 }}>
+        <View style={{ display: 'flex', justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
           <Image style={
             {
 
@@ -93,7 +93,7 @@ class d extends Component {
             }
           }
 
-            source={require('./image/btn.jpg')} />
+            source={require('../../../image/btn.jpg')} />
         </View>
        
         <FlatList
