@@ -1,10 +1,12 @@
 /*
 * 导入视图
 */
-import {Image,StyleSheet} from 'react-native'
+import React from 'react'
+import {Image,StyleSheet,Text} from 'react-native'
 
 import MainTab from './TabNavigator'
 import NewsDetail from './page/table/NewsDetail'
+// import NewsDetail from './TopTabNavigator'
 import VideoDetail from './page/table/VideoDetail'
 import NewsSearch from './page/table/NewsSearch'
 import Mine from './page/table/mine'
@@ -40,31 +42,47 @@ const RouteConfig = {
 
            //设置StackNavigator属性
            header:null,
-           headerTitle: '首页',
+        //    headerTitle: '首页',
            
-           headerStyle: styles.navigator,
-           headerTintColor : styles.headerTintColor,
-           headerTitleStyle: styles.navigatorTitle,
-           gesturesEnabled:true,
+        //    headerStyle: styles.navigator,
 
-           //这里设置Tabbar不同页面可能会不同的属性
-           tabBarVisible: true,
-           tabBarLabel:'首页',
-           tabBarIcon:(({tintColor,focused}) => {
-               return(
-                   <Image 
-                   source={{uri : 'http://pic.51yuansu.com/pic3/cover/03/06/15/5b2cb0bceb281_610.jpg'}}
-                   style = {{width:20,height:20}}
+        //    headerTintColor : styles.headerTintColor,
+        //    headerTitleStyle: styles.navigatorTitle,
+        //    gesturesEnabled:true,
+
+        //    //这里设置Tabbar不同页面可能会不同的属性
+        //    tabBarVisible: true,
+        //    tabBarLabel:'首页',
+        //    tabBarIcon:(({tintColor,focused}) => {
+        //        return(
+        //            <Image 
+        //            source={{uri : 'http://pic.51yuansu.com/pic3/cover/03/06/15/5b2cb0bceb281_610.jpg'}}
+        //            style = {{width:20,height:40}}
                    
-               />
-               )
-           }),
+        //        />
+        //        )
+        //    }),
        })
     },
    // 下面三个页面我需要隐藏导航栏
     NewsDetail: {
         screen: NewsDetail,
-        navigationOptions: ({navigation}) => ({header: null, gesturesEnable: true})
+  
+        navigationOptions: ({navigation}) => (
+            {
+                headerTitle : "新闻详情",
+                gesturesEnabled : true,
+                headerStyle: styles.navigator,
+                headerTitleStyle : {
+                    color : 'blue'
+                },
+                headerRight : () => <Text style={{color :'orange'}}>分享</Text>,
+                headerRightContainerStyle : {
+                    marginRight: 40
+                }
+                
+               
+            })
     },
     VideoDetail: {
         screen: VideoDetail,

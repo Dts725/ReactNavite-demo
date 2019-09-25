@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View, Text, TextInput, Image, ScrollView, FlatList } from 'react-native'
+import { View, Text, TextInput, Image, ScrollView, FlatList,Button,TouchableHighlight } from 'react-native'
 import { Net } from '../../../utils/Net'
 // import { StackNavigator } from 'react-navigation'
 
@@ -82,8 +82,14 @@ class d extends Component {
 
             source={{ uri: 'http://language.chinadaily.com.cn/images/attachement/jpg/site1/20151010/00221910dbb41782b08f47.jpg' }} />
         </View>
-
-        <View style={{ display: 'flex', justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
+        <TouchableHighlight
+      style={{ display: 'flex', justifyContent: "center", alignItems: 'center', marginTop: 20 }}
+        onPress = { () => {
+          console.log('点击图片')
+          this.props.navigation.push('NewsDetail')
+        }
+      }
+        >
           <Image style={
             {
 
@@ -93,7 +99,20 @@ class d extends Component {
             }
           }
 
-            source={require('../../../image/btn.jpg')} />
+            source={require('../../../image/btn.jpg')} 
+     
+            />
+              </TouchableHighlight>
+        <View       style={{ display: 'flex', justifyContent: "center", alignItems: 'center', marginTop: 20 }}>
+
+              <Button
+            onPress={() => {
+             
+              this.props.navigation.push('NewsDetail')
+            }}
+            title="点击跳转新闻详情"
+          />
+      
         </View>
        
         <FlatList

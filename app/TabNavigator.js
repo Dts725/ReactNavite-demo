@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from 'react-navigation-tabs'
+import { createBottomTabNavigator,createMaterialTopTabNavigator  } from 'react-navigation-tabs'
 import React from "react"
 import {Image,StyleSheet} from 'react-native'
 
