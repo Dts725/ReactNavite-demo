@@ -114,14 +114,15 @@ class d extends Component {
           />
       
         </View>
-       
+        
+            
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => <Text style={{ textAlign: 'center', marginTop: 10, marginBottom: 10 }} key={item.id}>{item.address}</Text>}
           keyExtractor={(item, index) => item.id.toString()}
         />
 
-
+            
       </View>)
   }
 

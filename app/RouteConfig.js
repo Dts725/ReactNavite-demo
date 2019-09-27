@@ -70,13 +70,13 @@ const RouteConfig = {
   
         navigationOptions: ({navigation}) => (
             {
-                headerTitle : "新闻详情",
+                headerTitle : () => <Text style={{fontSize :20}}  onPress= {()=> alert('你点击了新闻详情')}>新闻详情</Text>,
                 gesturesEnabled : true,
                 headerStyle: styles.navigator,
                 headerTitleStyle : {
                     color : 'blue'
                 },
-                headerRight : () => <Text style={{color :'orange'}}>分享</Text>,
+                headerRight : () => <Text style={{color :'orange'}}  onPress= {()=> alert('你点击了分享')}>分享</Text>,
                 headerRightContainerStyle : {
                     marginRight: 40
                 }
